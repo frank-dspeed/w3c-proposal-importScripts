@@ -71,6 +71,17 @@ function importScripts(scripts, callback) {
 
 other environments like node?
 ```js
+// this uses require which does work with strings not urls it is only pseudo code
 const importScripts = (...args) => args.map(require) && undefined
 importScripts('url:1','url:2')
 ```
+
+## Draft importScripts
+- Accepts Urls
+- returns undefined void
+- executes scripts in order
+- accepts multipe urls as arrguments
+- is eq to in esm examples are all line1 of example.js:
+  - dynamic with tla: ```await Promise.all(import('url1'),import('url2')).then(()=>{ /* noOp */ });```
+  - static: ```import 'url1'; import 'url2';```
+-
