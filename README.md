@@ -69,7 +69,8 @@ function importScripts(scripts, callback) {
 
 
 
-other environments
-```
+other environments like node?
+```js
+const importScripts = (...args) => args.map(require) && undefined
 importScripts('url:1','url:2')
 ```
